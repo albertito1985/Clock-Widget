@@ -89,16 +89,25 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <Disco hours={this.state.hours} minutes={this.state.minutes} period={this.state.period}/>
-          <div className="relojes">
-            <RelojAnalogo hours={this.state.hours} minutes={this.state.minutes} answer={this.state.config.analogAnswer} response={this.changeTime} interaction={this.state.config.analogInteraction} feedback={null}/>
-            <RelojDigital hours={this.state.hours} minutes={this.state.minutes} answer={this.state.config.digitalAnswer} response={this.changeTime} interaction={this.state.config.digitalInteraction} mode={this.state.config.digital}/>
+
+          <div className="instructions">
+            <h2>Clock Widget</h2>
+            <p>Move the clock handles or change the digital time.</p>
           </div>
-          <div className="texto">
-            <p className="pregunta">¿Qué hora és?</p>
-            <Escrito hours={this.state.hours} minutes={this.state.minutes} answer={this.state.config.writtenAnswer} feedback={this.updateFeedback} interaction={this.state.config.writtenInteraction} mode={this.state.config.writtenType} response={this.updateResponse}/>
-            <div className="feedback">{this.state.feedback}</div>
+
+          <div className="clocks">
+            <div className="discoContainer">
+              <div className="triangle-down"></div>
+              <Disco hours={this.state.hours} minutes={this.state.minutes} period={this.state.period}/>
+            </div>
+            
+            <div className="relojes">
+              <RelojAnalogo hours={this.state.hours} minutes={this.state.minutes} answer={this.state.config.analogAnswer} response={this.changeTime} interaction={this.state.config.analogInteraction} feedback={null}/>
+              <RelojDigital hours={this.state.hours} minutes={this.state.minutes} answer={this.state.config.digitalAnswer} response={this.changeTime} interaction={this.state.config.digitalInteraction} mode={this.state.config.digital}/>
+            </div>
           </div>
+          
+
         </div>
       </div>
     );

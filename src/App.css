@@ -24,6 +24,8 @@ total 400+240+20 = 660*/
 
 .App{
   display: flex;
+  flex-direction: column;
+  gap:20px;
   height:100vh;
   min-height:490px;
   width:100%;
@@ -31,11 +33,42 @@ total 400+240+20 = 660*/
   align-items:center;
   padding:20px;
 }
+
+.instructions{
+  width:100%;
+  text-align: center;;
+}
 .container{
   position:relative;
   display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
   gap:20px;
-  border:1px solid black;
+}
+
+.clocks{
+  display:flex;
+  flex-direction:row;
+  gap:20px;
+  justify-content: center;
+  align-items:center;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #000;
+}
+
+.discoContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  gap:10px;
 }
 
 .disco{
@@ -273,10 +306,6 @@ transform:rotate(calc(var(--rotate) * -1));
 .digitalSpan{
   display:none;
 }
-
-
-
-
 
 /*
 ==========================>Texto Escrito<==========================
